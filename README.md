@@ -53,3 +53,6 @@ There are 7 EventID that maps to different rule levels. Of course the rule level
 The event timestamp will correspond to the time the hayabusa output has been sent to the eventlog, the original timestamp of the event the alert triggered on is also available as event data.
 
 
+![](./img/HayabusaToWinEventLog-Splunk.png)
+
+![](./img/HayabusaToWinEventLog-Sample.png)
