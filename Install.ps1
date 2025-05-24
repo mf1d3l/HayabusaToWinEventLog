@@ -47,7 +47,7 @@ Expand-Archive -Path $downloadPath -DestinationPath $HayabusaDir -Force
 
 }
 
-# Put a copy of the HayabusaToWinEventLog script in the Autoruns directory
+# Put a copy of the HayabusaToWinEventLog script in the install directory
 copy "$PSScriptRoot\HayabusaToWinEventLog.ps1" "$HayabusaDir\HayabusaToWinEventLog.ps1"
 
 $ST_A = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-WindowStyle hidden c:\PROGRA~1\HayabusaToWinEventLog\HayabusaToWinEventLog.ps1"
