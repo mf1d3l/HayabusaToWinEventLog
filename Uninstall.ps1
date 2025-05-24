@@ -1,6 +1,3 @@
-$eventSource = "Hayabusa"
-$eventLogName = "Application"
-
 # Remove the scheduled task
 Unregister-ScheduledTask -TaskName "HayabusaToWinEventLog" -Confirm:$false
 
