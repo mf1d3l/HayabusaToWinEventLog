@@ -50,11 +50,11 @@ Expand-Archive -Path $downloadPath -DestinationPath $HayabusaDir -Force
 # Put a copy of the HayabusaToWinEventLog script in the install directory
 copy "$PSScriptRoot\HayabusaToWinEventLog.ps1" "$HayabusaDir\HayabusaToWinEventLog.ps1"
 
+# Configure Scheduled Task
 $ST_A = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-WindowStyle hidden c:\PROGRA~1\HayabusaToWinEventLog\HayabusaToWinEventLog.ps1"
 $ST_T = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 15)
 $ST_P = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -RunLevel Highest -LogonType ServiceAccount
 Register-ScheduledTask -TaskName "HayabusaToWinEventLog" -Action $ST_A -Trigger $ST_T -Principal $ST_P
-
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -Hidden -ExecutionTimeLimit (New-TimeSpan -Minutes 60) -RestartCount 1 -StartWhenAvailable
 Set-ScheduledTask -TaskName "HayabusaToWinEventLog" -Settings $settings
 
