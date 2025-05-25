@@ -28,11 +28,11 @@ Since alerts are generated based on periodic scans rather than event-driven trig
 
 ### Installation
 
-An installation script is [hereby](./Install.ps1) provided, it will create an installation folder, fetch the latest release of hayabusa from github, register a scheduled task to run HayabusaToWinEventLog at scheduled intervals and finally make some SACLs adjustements on the installation folder. This install script is suitable for quick testing in a lab but for enterprise deployment it is recommended to make the necessary adjustment to make it suits your specific needs.
+An installation script is [hereby](./Install.ps1) provided, it will create an installation folder, fetch the latest release of hayabusa from github, register a scheduled task to run HayabusaToWinEventLog at scheduled intervals and finally assign some SACLs on the installation folder. This install script is suitable for quick testing in a lab but for enterprise deployment it is recommended to make the necessary adjustment to make it suits your specific needs.
 
 ### Configuration
 
-The first thing you may want to customize is the scheduled intervals hayabusa runs on the endpoint. By default in the provided script is meant to run every 15 minutes against the last logs generated in that window. You can adapt this by changing the repetition interval of the scheduled task registered in the installed script and changing the time offset passed as a commandline parameter to hayabusa in the HayabusaToWinEventLog script.
+The first thing you may want to customize is the scheduled intervals hayabusa runs on the endpoint. By default, the script is meant to run every 15 minutes against the last logs generated in that window. You can adapt this by changing the repetition interval of the scheduled task registered in the installed script and changing the time offset passed as a commandline parameter to hayabusa in the HayabusaToWinEventLog script.
 
 The second thing you may want to tune is the level of the rules you want hayabusa to process, you can adapt the minimum level via a variable in the HayabusaToWinEventLog script directly. Of course you can go beyond that basic settings by customizing the invocation parameter of hayabusa directly or even deploying custom rules in the install folder. By default the minimum level of the rules to be processed is "medium".
 
