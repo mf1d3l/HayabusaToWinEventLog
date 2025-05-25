@@ -28,7 +28,7 @@ Since alerts are generated based on periodic scans rather than event-driven trig
 
 ### Installation
 
-An installation script is [hereby](./Install.ps1) provided, it will create an installation folder, fetch the latest release of hayabusa from github, register a scheduled task to run HayabusaToWinEventLog at scheduled intervals and finally assign some SACLs on the installation folder. This install script is suitable for quick testing in a lab but for enterprise deployment it is recommended to make the necessary adjustment to make it suits your specific needs.
+An installation script is [hereby](./Install.ps1) provided, it will create an installation folder, fetch the latest release of hayabusa from github, register a scheduled task to run HayabusaToWinEventLog at scheduled intervals and finally assign some DACLs on the installation folder. This install script is suitable for quick testing in a lab but for enterprise deployment it is recommended to make the necessary adjustment to make it suits your specific needs.
 
 ### Configuration
 
